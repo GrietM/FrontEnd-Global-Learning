@@ -1,4 +1,5 @@
 import Card from '../Cards/Card'
+import './CardsList.css'
 
 const CardsList = (props) => {
   return(

@@ -8,15 +8,18 @@ import CardsList from './components/CardsList/CardsList';
 function App() {
   const [profiles, setProfiles] = useState([])
 
-  /*const addNewProfile = (profileData) => {
+  const addNewProfile = (profileData) => {
+    setProfiles([...profiles,profileData])
+  }
+  console.log('profiles :', profiles)
 
-  }*/
 
   return (
     <div>
       <div>
         <div className= 'header'> GitHub Cards App </div>
-        <CardsList data = {testData} />
+        <Form changeList = {addNewProfile} />
+        <CardsList data = {profiles} />
       </div>
     </div>
   );

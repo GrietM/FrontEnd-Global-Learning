@@ -1,3 +1,5 @@
+import './Card.css'
+
 const Card = (props) => {
   const profile = props.profile
   return (
