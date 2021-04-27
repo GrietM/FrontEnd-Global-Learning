@@ -8,6 +8,9 @@ const Card = (props) => {
       <div className= 'info'>
         <div className= 'name'> {profile.name} </div>
         <div className= 'company'> {profile.company} </div>
+        <ul>
+         <a href = {profile.html_url}> Visit this profile </a>
+        </ul>
       </div>
     </div>
   );
