@@ -1,26 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {useState,useEffect} from 'react'
-import Form from './components/Forms/Form'
-import {testData} from './data'
-import CardsList from './components/CardsList/CardsList';
+import CardsPage from './CardsPage'
+import {Routes, Route} from 'react-router-dom'
+import Books from './Books'
+import Header from './components/Header/Header'
+import { DatePicker } from 'antd';
+import 'antd/dist/antd.css';
+
 
 function App() {
-  const [profiles, setProfiles] = useState([])
-
-  const addNewProfile = (profileData) => {
-    setProfiles([...profiles,profileData])
-  }
-  console.log('profiles :', profiles)
-
-
   return (
     <div>
-      <div>
-        <div className= 'header'> GitHub Cards App </div>
-        <Form changeList = {addNewProfile} />
-        <CardsList data = {profiles} />
-      </div>
+      <Header/>
+      <Routes>
+        <Route path ='/' element ={<CardsPage/>}/>
+        <Route path ='/books' element ={<Books/>}/>
+      </Routes>
+      
     </div>
   );
 }

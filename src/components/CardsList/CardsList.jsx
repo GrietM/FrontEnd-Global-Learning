@@ -1,12 +1,48 @@
-import Card from '../Cards/Card'
-import './CardsList.css'
+//import Card from '../Cards/Card'
+import { Card } from 'antd';
+const { Meta } = Card;
 
 const CardsList = (props) => {
   return(
     <div> 
-      {props.data.map(profile => <Card profile = {profile}/>)}
+     {props.data.map(profile =>
+      <Card
+        profile = {profile}
+        hoverable
+        style={{ width: 240 }}
+        cover={<img src= {profile.avatar_url} alt = ''/>}
+      >
+        <Meta title= {profile.name} description={ 'Company:' + profile.company}/>
+        <div>
+        <ul>
+         <a href = {profile.html_url} > Visit this profile </a>
+        </ul>
+        </div>
+      </Card>
+        )}
     </div>
   )
 }
 
 export default CardsList
+
+
+/*
+
+const Card = (props) => {
+  const profile = props.profile
+  return (
+    <div className= 'github-profile'>
+      <img src= {profile.avatar_url} alt = ''/>
+      <div className= 'info'>
+        <div className= 'name'> {profile.name} </div>
+        <div className= 'company'> {profile.company} </div>
+        <ul>
+         <a href = {profile.html_url}> Visit this profile </a>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default Card*/

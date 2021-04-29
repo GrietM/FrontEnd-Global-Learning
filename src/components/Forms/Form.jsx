@@ -4,23 +4,13 @@ import './Form.css'
 
 const Form = (props) => {
   const [userName, setUserName] = useState('')
-  const [userId, setUserId] = useState('')
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    if (typeof (event)) == 'string'{
     const response = await axios.get(`https://api.github.com/users/${userName}`);
     props.changeList (response.data)
     console.log('response: ', response)
-    console.log('userName: ', userName)}
-    else{
-      if (typeof (event)) == 'number'{
-        const response = await axios.get(`https://api.github.com/users/${userId}`);
-    props.changeList (response.data)
-    console.log('response: ', response)
-    console.log('userId: ', userId)}
-      }
-    }
+    console.log('userName: ', userName)
   }
 
   const handleOnChange = (data) => {
