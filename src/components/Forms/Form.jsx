@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import './Form.css'
+//import './Form.css'
+import {Space} from 'antd'
 
 const Form = (props) => {
   const [userName, setUserName] = useState('')
@@ -20,6 +21,7 @@ const Form = (props) => {
 
   return (
     <form onSubmit = {handleSubmit}>
+      <Space>
       <input
       type= 'text'
       placeholder= "GitHub username"
@@ -28,6 +30,7 @@ const Form = (props) => {
       required
       ></input>
       <button> Add card </button>
+      </Space>
     </form>
   )
 }

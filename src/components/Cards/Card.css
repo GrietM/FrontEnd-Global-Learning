@@ -4,7 +4,7 @@
   }
 ​
 .info {
-  display: inline-block;
+  display: flex;
   margin-left: 12px;
   border: 5px solid darkblue;
   height: 150px;

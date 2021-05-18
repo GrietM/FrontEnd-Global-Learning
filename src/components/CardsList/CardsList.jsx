@@ -12,7 +12,7 @@ const CardsList = (props) => {
         style={{ width: 240 }}
         cover={<img src= {profile.avatar_url} alt = ''/>}
       >
-        <Meta title= {profile.name} description={ 'Company:' + profile.company}/>
+        <Meta title= {profile.name} description={ 'Company:' + profile.company} />
         <div>
         <ul>
          <a href = {profile.html_url} > Visit this profile </a>
@@ -26,23 +26,3 @@ const CardsList = (props) => {
 
 export default CardsList
 
-
-/*
-
-const Card = (props) => {
-  const profile = props.profile
-  return (
-    <div className= 'github-profile'>
-      <img src= {profile.avatar_url} alt = ''/>
-      <div className= 'info'>
-        <div className= 'name'> {profile.name} </div>
-        <div className= 'company'> {profile.company} </div>
-        <ul>
-         <a href = {profile.html_url}> Visit this profile </a>
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-export default Card*/
